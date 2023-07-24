@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Sunday, Jul 23, 2023</h1>
+            <div class="links">
+                <a href="/" class="active">Today</a>
+                <a href="/work">Work</a>
+            </div>
+        </nav>
+    </header>
+    <div class="main">
+        <form action="/add-todo" method="post">
+            <input type="text" name="todo" class="todo" placeholder="Add New">
+            <input type="submit" class="submit-btn" value="Create">
+        </form>
+        <ul class="todo-list">
+
+            <% if (locals.todoItems){ %>
+                <% for( let i = 0; i < todoItems.length; i++ ) { %>
+                    <li><input type="checkbox" name="cancel" class="checkbox"><span><%= todoItems[i] %></span></li>
+
+                    <% } %>
+                        <% } %>
+        </ul>
+    </div>
+
+    <script src="/script/main.js"></script>
+</body>
+
+</html>
