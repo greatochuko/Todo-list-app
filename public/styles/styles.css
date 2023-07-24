@@ -32,31 +32,27 @@ header nav h1 {
 }
 
 .links a {
-    margin: 10px;
+    margin-right: 10px;
     text-decoration: none;
     color: blue;
     padding: 10px;
-    border-radius: 5px;
+    border-bottom: solid 3px transparent;
+    transition: all 100ms;
 }
 
 .links a:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.links a.active {
     background-color: blue;
     color: white;
 }
 
-.links a.active:hover {
-    opacity: 0.3;
+.links a.active {
+    border-bottom-color: blue;
 }
 
 .main {
     background-color: white;
     width: 50%;
     margin: 0 auto;
-    height: 1000px;
     border-radius: 10px;
     padding: 20px;
 }
@@ -99,7 +95,6 @@ form {
     color: #333;
     border-bottom: solid 1px lightgray;
     display: flex;
-    cursor: pointer;
 }
 
 .todo-list li:nth-child(even) {
@@ -114,10 +109,6 @@ li span.cancelled {
 li span {
     padding: 20px 0;
     flex: 1;
-}
-
-li span:hover {
-    background-color: rgb(241, 241, 241);
 }
 
 .checkbox {

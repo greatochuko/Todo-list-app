@@ -11,7 +11,9 @@
 <body>
     <header>
         <nav>
-            <h1>Sunday, Jul 23, 2023</h1>
+            <h1>
+                <%= date %>
+            </h1>
             <div class="links">
                 <a href="/" class="active">Today</a>
                 <a href="/work">Work</a>
@@ -20,7 +22,7 @@
     </header>
     <div class="main">
         <form action="/add-todo" method="post">
-            <input type="text" name="todo" class="todo" placeholder="Add New">
+            <input type="text" name="todo" class="todo" required autocomplete="off" placeholder="Add New">
             <input type="submit" class="submit-btn" value="Create">
         </form>
         <ul class="todo-list">

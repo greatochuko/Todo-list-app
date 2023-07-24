@@ -5,6 +5,14 @@ const app = express();
 const port = 3000;
 var todoList = [];
 var workTodoList = [];
+var today = new Date();
+var daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var daysOfTheMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function getTodayDate() {
+    var todayDate = daysOfTheWeek[today.getDay()] + ", " + daysOfTheMonth[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
+    return todayDate;
+}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -12,7 +20,8 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
     res.render("index.ejs", {
-        todoItems: todoList
+        todoItems: todoList,
+        date: getTodayDate()
     });
 });
 
