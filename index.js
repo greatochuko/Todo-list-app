@@ -10,7 +10,7 @@ var daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Fr
 var daysOfTheMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function getTodayDate() {
-    var todayDate = daysOfTheWeek[today.getDay()] + ", " + daysOfTheMonth[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
+    var todayDate = `${daysOfTheWeek[today.getDay()]}, ${daysOfTheMonth[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
     return todayDate;
 }
 
