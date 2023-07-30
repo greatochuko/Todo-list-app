@@ -22,17 +22,31 @@
     </header>
     <div class="main">
         <form action="/add-todo" method="post">
-            <input type="text" name="todo" class="todo" required autocomplete="off" placeholder="Add New">
+            <input type="text" name="todo" class="todo" required
+                autocomplete="off" placeholder="Add New">
             <input type="submit" class="submit-btn" value="Create">
         </form>
         <ul class="todo-list">
+            <% if (locals.todoItems) { %>
+            <% for (let i = 0; i < todoItems.length; i++) { %>
+            <li><input type="checkbox" name="cancel" class="checkbox"><span>
+                    <%= todoItems[i].name %>
+                </span>
+            </li>
 
-            <% if (locals.todoItems){ %>
-                <% for( let i = 0; i < todoItems.length; i++ ) { %>
-                    <li><input type="checkbox" name="cancel" class="checkbox"><span><%= todoItems[i] %></span></li>
 
-                    <% } %>
-                        <% } %>
+
+
+
+
+
+
+
+
+            
+            <% } %>
+            
+            <% } %>
         </ul>
     </div>
 
