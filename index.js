@@ -53,12 +53,6 @@ app.get("/", async(req, res) => {
     });
 });
 
-app.get("/work", (req, res) => {
-    res.render("work.ejs", {
-        todoItems: workTodoList
-    });
-});
-
 app.post('/add-todo', (req, res) => {
     var todo = req.body.todo;
     const newTodoItem = new Item({
@@ -72,12 +66,6 @@ app.post("/delete", async(req, res) => {
     var itemID = req.body.todoItem;
     await Item.deleteOne({ _id: itemID });
     res.redirect("/");
-});
-
-app.post('/add-todo-work', (req, res) => {
-    var todo = req.body.todo;
-    workTodoList.push(todo);
-    res.redirect("/work");
 });
 
 app.listen(port, () => {
