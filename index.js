@@ -15,7 +15,7 @@ function getTodayDate() {
     return todayDate;
 }
 
-mongoose.connect("mongodb://127.0.0.1:27017/todoListDB");
+mongoose.connect("mongodb+srv://greatochuko123:14122003@cluster0.0vhvc55.mongodb.net/todoListDB");
 
 const itemSchema = {
     name: String,
