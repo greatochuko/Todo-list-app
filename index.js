@@ -47,14 +47,15 @@ app.use(express.static("public"));
 
 app.get("/", async(req, res) => {
     try {
-        const todoListItems = await Item.find()
+        const todoListItems = await Item.find();
+
+        res.render("index.ejs", {
+            todoItems: todoListItems,
+            date: getTodayDate()
+        });
     } catch (error) {
         console.log(error);
     }
-    res.render("index.ejs", {
-        todoItems: todoListItems,
-        date: getTodayDate()
-    });
 });
 
 app.post('/add-todo', (req, res) => {
