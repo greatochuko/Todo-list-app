@@ -46,7 +46,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", async(req, res) => {
-    const todoListItems = await Item.find()
+    try {
+        const todoListItems = await Item.find()
+    } catch (error) {
+        console.log(error);
+    }
     res.render("index.ejs", {
         todoItems: todoListItems,
         date: getTodayDate()
@@ -64,7 +68,11 @@ app.post('/add-todo', (req, res) => {
 
 app.post("/delete", async(req, res) => {
     var itemID = req.body.todoItem;
-    await Item.deleteOne({ _id: itemID });
+    try {
+        await Item.deleteOne({ _id: itemID });
+    } catch (error) {
+        console.log(error);
+    }
     res.redirect("/");
 });
 
