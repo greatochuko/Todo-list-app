@@ -41,12 +41,12 @@ const defaultItems = [item1, item2, item3];
     console.log("Items inserted Successfully!");
 }) */
 
-const todoListItems = await Item.find()
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
+    const todoListItems = await Item.find()
     res.render("index.ejs", {
         todoItems: todoListItems,
         date: getTodayDate()
@@ -61,7 +61,16 @@ app.get("/work", (req, res) => {
 
 app.post('/add-todo', (req, res) => {
     var todo = req.body.todo;
-    todoList.push(todo);
+    const newTodoItem = new Item({
+        name: todo
+    })
+    newTodoItem.save();
+    res.redirect("/");
+});
+
+app.post("/delete", async(req, res) => {
+    var itemID = req.body.todoItem;
+    await Item.deleteOne({ _id: itemID });
     res.redirect("/");
 });
 

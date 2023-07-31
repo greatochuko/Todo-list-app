@@ -1,117 +1,117 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: roboto;
-    padding-top: 100px;
+  font-family: roboto;
+  padding-top: 100px;
 }
 
 header {
-    background-color: white;
-    box-shadow: 0 0 10px lightgray;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+  background-color: white;
+  box-shadow: 0 0 10px lightgray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 header nav h1 {
-    color: blue;
-    font-size: 20px;
-    font-weight: 500;
+  color: blue;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .links a {
-    margin-right: 10px;
-    text-decoration: none;
-    color: blue;
-    padding: 10px;
-    border-bottom: solid 3px transparent;
-    transition: all 100ms;
+  margin-right: 10px;
+  text-decoration: none;
+  color: blue;
+  padding: 10px;
+  border-bottom: solid 3px transparent;
+  transition: all 100ms;
 }
 
 .links a:hover {
-    background-color: blue;
-    color: white;
+  background-color: blue;
+  color: white;
 }
 
 .links a.active {
-    border-bottom-color: blue;
+  border-bottom-color: blue;
 }
 
 .main {
-    background-color: white;
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 10px;
-    padding: 20px;
+  background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 20px;
 }
 
-form {
-    display: flex;
+form.add-todo {
+  display: flex;
 }
 
 .todo {
-    background-color: rgb(241, 241, 241);
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    flex: 1;
-    outline: none;
+  background-color: rgb(241, 241, 241);
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  flex: 1;
+  outline: none;
 }
 
 .todo:focus {
-    box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px gray;
 }
 
 .submit-btn {
-    background-color: blue;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 0 10px;
+  background-color: blue;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 10px;
 }
 
 .todo-list {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .todo-list li {
-    list-style: none;
-    font-size: 20px;
-    color: #333;
-    border-bottom: solid 1px lightgray;
-    display: flex;
+  list-style: none;
+  font-size: 20px;
+  color: #333;
+  border-bottom: solid 1px lightgray;
+  display: flex;
 }
 
 .todo-list li:nth-child(even) {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 li span.cancelled {
-    text-decoration: line-through;
-    text-decoration-color: blue;
+  text-decoration: line-through;
+  text-decoration-color: blue;
 }
 
 li span {
-    padding: 20px 0;
-    flex: 1;
+  padding: 20px 0;
+  flex: 1;
 }
 
 .checkbox {
-    margin-right: 10px;
-    outline: none;
+  margin-right: 10px;
+  outline: none;
 }
