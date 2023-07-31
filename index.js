@@ -14,8 +14,11 @@ function getTodayDate() {
     var todayDate = `${daysOfTheWeek[today.getDay()]}, ${daysOfTheMonth[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
     return todayDate;
 }
-
-mongoose.connect("mongodb+srv://greatochuko123:14122003@cluster0.0vhvc55.mongodb.net/todoListDB");
+try {
+    mongoose.connect("mongodb+srv://greatochuko123:14122003@cluster0.0vhvc55.mongodb.net/todoListDB");
+} catch (error) {
+    console.log(error);
+}
 
 const itemSchema = {
     name: String,
